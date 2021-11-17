@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task8</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Bootstrap Bundle JS (jsDelivr CDN) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <selection>
+        <div class="main">
+            <div class="container pb-3">
+            <div class="row">
+                <div class="col-lg-12"><h1 class="text-center">Калькулятор стоимости заказа: </h1></div>
+            <div class="col-mb-12">
+            <form >
+                <div class="row mb-3">
+                    <div class="form-group col-md-6 col-sm-6">
+                        <span class="badge bg-warning" style="margin-bottom: 10px;">Цена товара:</span>
+                    <input type="text" class="form-control" id="cena" placeholder="0">
+                    <small class="form-text text-mutted">Введите цену в рублях</small>
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                    <span class="badge bg-warning" style="margin-bottom:10px;">Количество товаров: </span>
+                    <input type="text" id="kol" class="form-control" placeholder="0">
+                    <small class="form-text text-mutted">Введите количество</small>
+                </div>
+                </div>
+                <div class="row col-12 mb-3">
+                    <p style="color: black"><span id="out">0.0</span>₽</p>
+                </div>
+                <div class="row">
+                    <div class="col-mb-2 col-12">
+                        <input type="button" name="adress" id="btn" class="btn-block btn btn-success" style="border: 1px solid black;" value="Считать">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+    </selection> 
+
+    <main>
+        <div class="osn mt-4">
+            <div class="container pb-3">
+            <div class="row"> <div class="col-lg-12"> <h1 class="text-center text-dark">Калькулятор стоимости заказа и услуг</h1> </div> 
+            <div class="col-md-12"> 
+        <form id="form">
+            <div class="form-group col-md-6 col-sm-6">
+                <label for="multipleselect" class="badge bg-warning" style=" font-size: smaller">Выберите товар:</label>  
+                <div><small class="form-text text-muted">Прайс-лист: Кабель/провод- 1000ru; Компьютер- 70000ru; Сервисный центр- 5000ru;</small></div>
+        <select name="myselect">
+        <option value="1">Кабель/провод</option>
+        <option value="2">Компьютер</option>
+        <option value="3">Сервисный центр</option>
+        </select>
+       </div>
+        <div class="calc-section">
+        <label class="checkbox-wrapper title-bold section-title .section-title-vertical-center">
+        <span class="badge bg-warning mt-3" style="font-size: smaller">Количество товаров</span>
+        <input type="number" min="1" max="200" value="1" id="square-input" class="title__inline input-short" />
+        <span class="title__inline">кол-во</span>
+        </label>
+        </div>
+        
+        <div class="calc-section" id="radios">
+            <span class="badge bg-warning mt-3" style="font-size: smaller">Выберите дополнительные услуги:</span>
+            <div class="form-check">
+            <label class="radio-wrapper" data-name="mobile"><input type="radio" class="radio" name="type" value="1000">Доставка</label>
+        </div>
+        <div class="form-check">
+            <label class="radio-wrapper" data-name="mobile"><input type="radio" class="radio" name="type" value="3000">Подключение</label>
+        </div>
+        <div class="form-check">
+            <label class="radio-wrapper" data-name="mobile"><input type="radio" class="radio" name="type" value="1000">Настройка</label>
+        </div>
+        <small class="form-text text-muted">Прайс-лист: Доставка- 1000ru; Подключение- 3000ru; Настройка- 1000ru;</small>
+        </div>
+        
+        <div class="calc-section" id="checkbox">
+            <span class="badge bg-warning mt-3" style="font-size: smaller">Выберите дополнительные опции:</span>
+            <div class="form-check"> <label><input type="checkbox" class="checkbox" name="ceiling" value="10000">Замена комплектующих</label></div>
+            <div class="form-check"> <label><input type="checkbox" class="checkbox" name="ceiling" value="2000">Установка различного ПО</label></div>
+                <div class="form-check"> <label><input type="checkbox" class="radio" name="ceiling" value="1000">Диагностика</label></div>
+                <small class="form-text text-muted">Прайс-лист: Замена комплектующих- 10000ru; Установка различного ПО- 2000ru; Диагностика- 1000ru;</small>
+           </div>
+        
+        
+        <div class="calc-price">
+        <div class="badge bg-success mt-3" style="border: 1px solid black; font-size: medium; color:whitesmoke">Итоговая стоимость:</div>
+        <span id="total-price">0</span>
+        рублей
+        </div>
+        
+        </form>
+            </div>
+            </div>
+            </div>
+        </div>
+        </main>
+        <div class="wrapper">
+            <div class="slider">
+                <div class="slider__item">
+                    <img src="img/01.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/02.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/03.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/04.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/05.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/06.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/07.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/08.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/09.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/10.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/11.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/12.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/13.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/14.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/15.jpeg" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="img/16.jpeg" alt="">
+                </div>
+
+            </div>
+            <div class="wrapper">
+                <div style="text-align: center;" > <a role="button" href="#popup" class="header_phone popup-link btn btn-success" id = "for-popup-form">Нажми</a></div>
+                <div class="popup-overlay" id = "popup">
+                  <div class="popWindow popup-main-window">
+                  <div class="close-btn">&times;</div>
+                  
+                  <div class="row my-4">
+                  <h2 class="form-text">Отправка данных на почту</h2>
+                  </div>
+                  <form method="POST" class="row mx-5 my-2 gy-1 popup-form">
+                    <div class="form_item form-group">
+                        <label for="formName" style="color: black;">Имя:</label>
+                        <input type="text" class="form_input _req form-control w-75 shadow bg-white rounded" name = "popup-name" id="formName" placeholder="..." required>
+                        <small class="form-text text-muted">Введите ваше имя</small>
+                        </div>
+                        <div class="form_item form-group">
+                            <label for="formEmail" style="color: black;">E-mail:</label>
+                            <input type="email" class="form_input _req _email form-control w-75 shadow bg-white rounded" id="formEmail" name = "popup-email" required placeholder="..." >
+                            <small class="form-text text-muted">Введите один из следующих email: mail.ru,.com,.yandex</small>
+                            </div>   
+                            <div class="form_item form-group w-75">
+                                <label for="formMessage" style="color: black;">Сообщение:</label>
+                                <textarea id="formMessage" id="formMessage" name="popup-message" class="form_input _req form-control shadow bg-white rounded"  id="form">
+                                </textarea>
+                                <small class="form-text text-muted">Необязательное поле</small>
+                                </div>
+                                <div class="form-check">
+                                    <label id="soglasie " class="checkbox_label form-check-label">С контрактом ознакомлен(а)  </label>
+                                    <input for="soglasie" checked type="checkbox" name="popup-checkbox" class="checkbox_input form-check-input" style="color: black;">           
+                                    </div>
+                  <label class = "col-12"><input type = "submit" name = "popup-submit" class = "popup-submit"></label>
+                  </form>
+                  </div>
+                  <br>
+                  <div class="popWindow thank-you-window">
+                  <div class="close-btn">&times;</div>
+                  <br><br>
+                  <p class = "thank-you-message">
+                  Ваше cообщение отправлено!
+                  </p>
+                  </div>
+                  </div>
+                </div>
+                </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!--подключаем jQuery-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!--подключаем слайдер Slick-->
+        <script src="slick.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
